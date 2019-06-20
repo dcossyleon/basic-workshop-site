@@ -1,6 +1,49 @@
 ---
-title: "My 1st Workshop Site"
-author: "Desirée De Leon"
+title: "Wizardry Workshop 2019"
 ---
 
-Welcome to my workshop site.
+![](http://www.penguinteen.com/content/uploads/Hogwarts-castle-harry-potter-166431-1.jpg)
+
+## Hogwards School of Witchcraft and Wizardry
+
+We are so excited to have you as a participant at this year's workshop. You can find all of our course content on this site.
+
+## Organizers
+
+* Harry Potter
+* Hermione Granger
+
+
+# Pre-work
+
+Please prepare the following materials before arriving for the first day. 
+
+* 
+*
+
+
+# Schedule
+
+### Day 1
+
+* 08:00 - 09:00 Registration/breakfast
+* 09:00 - 10:30 Wizarding Careers
+* 10:30 - 11:00 Break
+* 11:00 - 12:30 Recent Advances in Broom Travel
+* 12:30 - 14:00 Lunch
+* 14:00 - 15:30 Intro to Quidditch
+* 15:30 - 16:00 Break
+* 16:00 - 17:30 Potions I 
+
+
+### Day 2
+
+* 08:00 - 09:00 Registration/breakfast
+* 09:00 - 10:30 Spell Reversal I
+* 10:30 - 11:00 Break
+* 11:00 - 12:30 Spell Reversal II
+* 12:30 - 14:00 Lunch
+* 14:00 - 15:30 Labyrinths 
+* 15:30 - 16:00 Break
+* 16:00 - 17:30 Potions II 
+
