@@ -5,5 +5,9 @@ navbar:
   left:
     - text: "Home"
       href: index.html
+    - text: "Materials"
+      href: materials.html
     - text: "About"
       href: about.html
+output:
+  html_document:

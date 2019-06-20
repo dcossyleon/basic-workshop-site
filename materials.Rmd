@@ -1,28 +1,62 @@
 ---
 title: "Materials"
-author: "Desirée De Leon"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+## Day 1 Materials
 
-## R Markdown
+* 08:00 - 09:00 Registration/breakfast
+  + Breakfast offerings include bagels and coffee.
+  
+* 09:00 - 10:30 Wizarding Careers
+    + Speaker: Dr. Higgledypuff, Hogwarts
+    + Summary: In this session, we will present an overview of career tracks which are expected to become the most lucrative and demanded in the next decade. Advice regarding resume preparation and interviewing will be provided. 
+    + Slides: 
+    + Download Exercise files
+* 10:30 - 11:00 Break
+* 11:00 - 12:30 Recent Advances in Broom Travel
+    + Speaker: Dr. Higgledypuff
+    + Summary: In this session, we will present an overview of career tracks which are expected to become the most lucrative and demanded in the next decade. Advice regarding resume preparation and interviewing will be provided. 
+    + Slides: 
+    + Download Exercise files
+* 12:30 - 14:00 Lunch
+* 14:00 - 15:30 Intro to Quidditch
+    + Speaker: Dr. Higgledypuff
+    + Summary: In this session, we will present an overview of career tracks which are expected to become the most lucrative and demanded in the next decade. Advice regarding resume preparation and interviewing will be provided. 
+    + Slides: 
+    + Download Exercise files
+* 15:30 - 16:00 Break
+* 16:00 - 17:30 Potions I 
+    + Speaker: Dr. Higgledypuff
+    + Summary: In this session, we will present an overview of career tracks which are expected to become the most lucrative and demanded in the next decade. Advice regarding resume preparation and interviewing will be provided. 
+    + Slides: 
+    + Download Exercise files
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+## Day 2 Materials
 
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+* 08:00 - 09:00 Registration/breakfast
+  + Breakfast offerings include bagels and coffee.
+  
+* 09:00 - 10:30 Wizarding Careers
+    + Speaker: Dr. Higgledypuff, Hogwarts
+    + Summary: In this session, we will present an overview of career tracks which are expected to become the most lucrative and demanded in the next decade. Advice regarding resume preparation and interviewing will be provided. 
+    + Slides: 
+    + Download Exercise files
+* 10:30 - 11:00 Break
+* 11:00 - 12:30 Recent Advances in Broom Travel
+    + Speaker: Dr. Higgledypuff
+    + Summary: In this session, we will present an overview of career tracks which are expected to become the most lucrative and demanded in the next decade. Advice regarding resume preparation and interviewing will be provided. 
+    + Slides: 
+    + Download Exercise files
+* 12:30 - 14:00 Lunch
+* 14:00 - 15:30 Intro to Quidditch
+    + Speaker: Dr. Higgledypuff
+    + Summary: In this session, we will present an overview of career tracks which are expected to become the most lucrative and demanded in the next decade. Advice regarding resume preparation and interviewing will be provided. 
+    + Slides: 
+    + Download Exercise files
+* 15:30 - 16:00 Break
+* 16:00 - 17:30 Potions I 
+    + Speaker: Dr. Higgledypuff
+    + Summary: In this session, we will present an overview of career tracks which are expected to become the most lucrative and demanded in the next decade. Advice regarding resume preparation and interviewing will be provided. 
+    + Slides: 
+    + Download Exercise files
