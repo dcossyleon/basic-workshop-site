@@ -17,7 +17,7 @@ navbar:
       - text: "Day 2"
         href: day2.html
     - text: " Code of Conduct"
-      href: code_html
+      href: code_of_conduct.html
   right:
   - icon: fa-github
     href: https://github.com/rstudio4edu/rmd-bare-demo-workshop

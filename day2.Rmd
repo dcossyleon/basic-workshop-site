@@ -1,5 +1,16 @@
 ---
-title: "About This Website"
+title: "Materials"
 ---
 
-More about this website.
+<center>![](https://images.unsplash.com/photo-1495908333425-29a1e0918c5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60){width=500px}</center>
+
+## Day 2 Materials
+
+* 08:00 - 09:00 Registration/breakfast
+* 09:00 - 10:30 Trends in Houseplants
+* 10:30 - 11:00 Break
+* 11:00 - 12:30 Make Your Houseplant Instagram Famous
+* 12:30 - 14:00 Lunch
+* 14:00 - 15:30 Coping with Plant Death
+* 15:30 - 16:00 Break
+* 16:00 - 17:30 DIY Fertilizer
