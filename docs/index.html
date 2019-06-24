@@ -11,7 +11,7 @@
 
 
 
-<title>Wizardry Workshop 2019</title>
+<title>Plant Lovers Workshop 2019</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,14 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/navigation-1.1/sourceembed.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
 
@@ -48,6 +55,9 @@ h6 {
 }
 .table th:not([align]) {
   text-align: left;
+}
+#rmd-source-code {
+  display: none;
 }
 </style>
 
@@ -240,7 +250,99 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+<script>
+$(document).ready(function () {
+  window.initializeSourceEmbed("index.Rmd");
+});
+</script>
 
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
 
 
 
@@ -250,6 +352,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -262,22 +374,45 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">My Website</a>
+      <a class="navbar-brand" href="index.html">Plant Lovers Workshop 2019</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
   <a href="index.html">Home</a>
 </li>
-<li>
-  <a href="materials.html">Materials</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Materials
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Pre-work</li>
+    <li>
+      <a href="prework.html">Setup Instructions</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Sessions</li>
+    <li>
+      <a href="day1.html">Day 1</a>
+    </li>
+    <li>
+      <a href="day2.html">Day 2</a>
+    </li>
+  </ul>
 </li>
 <li>
-  <a href="about.html">About</a>
+  <a href="code_html"> Code of Conduct</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/rstudio4edu/rmd-bare-demo-workshop">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -285,76 +420,90 @@ $(document).ready(function () {
 
 <div class="fluid-row" id="header">
 
-
-
-<h1 class="title toc-ignore">Wizardry Workshop 2019</h1>
-
-</div>
-
-<div id="TOC">
-<ul>
-<li><a href="#hogwards-school-of-witchcraft-and-wizardry">Hogwards School of Witchcraft and Wizardry</a></li>
-<li><a href="#organizers">Organizers</a></li>
-<li><a href="#pre-work">Pre-work</a></li>
-<li><a href="#schedule">Schedule</a><ul>
-<li><a href="#day-1">Day 1</a></li>
-<li><a href="#day-2">Day 2</a></li>
-</ul></li>
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
 </ul>
 </div>
 
-<p><img src="http://www.penguinteen.com/content/uploads/Hogwarts-castle-harry-potter-166431-1.jpg" /></p>
-<div id="hogwards-school-of-witchcraft-and-wizardry" class="section level2">
-<h2>Hogwards School of Witchcraft and Wizardry</h2>
-<p>We are so excited to have you as a participant at this year’s workshop. You can find all of our course content on this site.</p>
+
+
+<h1 class="title toc-ignore">Plant Lovers Workshop 2019</h1>
+
 </div>
-<div id="organizers" class="section level2">
-<h2>Organizers</h2>
+
+
+<p><img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1990&amp;q=80" /></p>
+<p><br></p>
+<div id="we-are-so-excited-to-have-you-as-a-participant-at-this-years-workshop.-you-can-find-all-of-our-workshop-information-on-this-site." class="section level4">
+<h4>We are so excited to have you as a participant at this year’s workshop. You can find all of our workshop information on this site.</h4>
+<p><br></p>
+</div>
+<div id="when-where" class="section level1">
+<h1>When &amp; Where</h1>
+<p><strong>Date:</strong> August 3-4, 2019, 08:00-17:30<br />
+<strong>Location:</strong> Rm 123, Plant Studio, Plant City</p>
+<p><em>Parking: Not available. Please consider walking here and enjoy the nice plants outdoors as you do.</em></p>
+<p><br></p>
+</div>
+<div id="learning-objectives" class="section level1">
+<h1>Learning Objectives</h1>
+<p>Lorem ipsum dolor sit amet, cum ea ubique iisque facilisi, pri propriae gloriatur ad, duo te feugait disputando. Ex ius congue interpretaris. Sed te probatus dissentiet, purto tollit ut quo, an qui suas oporteat. Novum atomorum incorrupte ea sit.</p>
+<p>Ne cetero definiebas scripserit sea, sint viris elitr vim an. Quidam audire nostrum te pri, eam an invenire scriptorem. Ex altera aeterno scaevola pro, solum iusto ne mei. Et pri cibo constituam, velit postea utroque vim ad. Invidunt electram at per, sed id mutat impetus interesset.</p>
+<p><br></p>
+</div>
+<div id="organizers" class="section level1">
+<h1>Organizers</h1>
 <ul>
-<li>Harry Potter</li>
-<li>Hermione Granger</li>
+<li>Agnes Arber</li>
+<li>Gregor Mendel</li>
 </ul>
+<p><br></p>
 </div>
 <div id="pre-work" class="section level1">
 <h1>Pre-work</h1>
-<p>Please prepare the following materials before arriving for the first day.</p>
-<ul>
-<li></li>
-<li></li>
-</ul>
+<p>Please make sure you have completed the <a href="prework.html">pre-work</a> before your arrival to the workshop.</p>
+<p><br></p>
 </div>
 <div id="schedule" class="section level1">
 <h1>Schedule</h1>
+<p>Our agenda is below.</p>
+<p><br></p>
 <div id="day-1" class="section level3">
 <h3>Day 1</h3>
 <ul>
 <li>08:00 - 09:00 Registration/breakfast</li>
-<li>09:00 - 10:30 Wizarding Careers</li>
-<li>10:30 - 11:00 Break</li>
-<li>11:00 - 12:30 Recent Advances in Broom Travel</li>
+<li>09:00 - 10:30 How to Keep Your Orchid Alive</li>
+<li>10:30 - 11:00 Break / Plant Swap</li>
+<li>11:00 - 12:30 Growing a Papaya in Chicago</li>
 <li>12:30 - 14:00 Lunch</li>
-<li>14:00 - 15:30 Intro to Quidditch</li>
+<li>14:00 - 15:30 How to Grow the Most Beautiful Tomato</li>
 <li>15:30 - 16:00 Break</li>
-<li>16:00 - 17:30 Potions I</li>
+<li>16:00 - 17:30 Baby Arugula: 3 Varieties, Countless Salads</li>
 </ul>
+<p><br></p>
 </div>
 <div id="day-2" class="section level3">
 <h3>Day 2</h3>
 <ul>
 <li>08:00 - 09:00 Registration/breakfast</li>
-<li>09:00 - 10:30 Spell Reversal I</li>
+<li>09:00 - 10:30 Trends in Houseplants</li>
 <li>10:30 - 11:00 Break</li>
-<li>11:00 - 12:30 Spell Reversal II</li>
+<li>11:00 - 12:30 Make Your Houseplant Instagram Famous</li>
 <li>12:30 - 14:00 Lunch</li>
-<li>14:00 - 15:30 Labyrinths</li>
+<li>14:00 - 15:30 Coping with Plant Death</li>
 <li>15:30 - 16:00 Break</li>
-<li>16:00 - 17:30 Potions II</li>
+<li>16:00 - 17:30 DIY Fertilizer</li>
 </ul>
 </div>
 </div>
 
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUGxhbnQgTG92ZXJzIFdvcmtzaG9wIDIwMTkiCi0tLQoKIVtdKGh0dHBzOi8vaW1hZ2VzLnVuc3BsYXNoLmNvbS9waG90by0xNDYzOTM2NTc1ODI5LTI1MTQ4ZTFkYjFiOD9peGxpYj1yYi0xLjIuMSZpeGlkPWV5SmhjSEJmYVdRaU9qRXlNRGQ5JmF1dG89Zm9ybWF0JmZpdD1jcm9wJnc9MTk5MCZxPTgwKQoKPGJyPgoKIyMjIyBXZSBhcmUgc28gZXhjaXRlZCB0byBoYXZlIHlvdSBhcyBhIHBhcnRpY2lwYW50IGF0IHRoaXMgeWVhcidzIHdvcmtzaG9wLiBZb3UgY2FuIGZpbmQgYWxsIG9mIG91ciB3b3Jrc2hvcCBpbmZvcm1hdGlvbiBvbiB0aGlzIHNpdGUuCgo8YnI+CgojIFdoZW4gJiBXaGVyZQoKKipEYXRlOioqIEF1Z3VzdCAzLTQsIDIwMTksIDA4OjAwLTE3OjMwICAKKipMb2NhdGlvbjoqKiBSbSAxMjMsIFBsYW50IFN0dWRpbywgUGxhbnQgQ2l0eQoKKlBhcmtpbmc6IE5vdCBhdmFpbGFibGUuIFBsZWFzZSBjb25zaWRlciB3YWxraW5nIGhlcmUgYW5kIGVuam95IHRoZSBuaWNlIHBsYW50cyBvdXRkb29ycyBhcyB5b3UgZG8uKgoKCjxicj4KCgojIExlYXJuaW5nIE9iamVjdGl2ZXMKCkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjdW0gZWEgdWJpcXVlIGlpc3F1ZSBmYWNpbGlzaSwgcHJpIHByb3ByaWFlIGdsb3JpYXR1ciBhZCwgZHVvIHRlIGZldWdhaXQgZGlzcHV0YW5kby4gRXggaXVzIGNvbmd1ZSBpbnRlcnByZXRhcmlzLiBTZWQgdGUgcHJvYmF0dXMgZGlzc2VudGlldCwgcHVydG8gdG9sbGl0IHV0IHF1bywgYW4gcXVpIHN1YXMgb3BvcnRlYXQuIE5vdnVtIGF0b21vcnVtIGluY29ycnVwdGUgZWEgc2l0LgoKTmUgY2V0ZXJvIGRlZmluaWViYXMgc2NyaXBzZXJpdCBzZWEsIHNpbnQgdmlyaXMgZWxpdHIgdmltIGFuLiBRdWlkYW0gYXVkaXJlIG5vc3RydW0gdGUgcHJpLCBlYW0gYW4gaW52ZW5pcmUgc2NyaXB0b3JlbS4gRXggYWx0ZXJhIGFldGVybm8gc2NhZXZvbGEgcHJvLCBzb2x1bSBpdXN0byBuZSBtZWkuIEV0IHByaSBjaWJvIGNvbnN0aXR1YW0sIHZlbGl0IHBvc3RlYSB1dHJvcXVlIHZpbSBhZC4gSW52aWR1bnQgZWxlY3RyYW0gYXQgcGVyLCBzZWQgaWQgbXV0YXQgaW1wZXR1cyBpbnRlcmVzc2V0LgoKCjxicj4KCiMgT3JnYW5pemVycwoKKiBBZ25lcyBBcmJlcgoqIEdyZWdvciBNZW5kZWwKCgo8YnI+CgojIFByZS13b3JrCgpQbGVhc2UgbWFrZSBzdXJlIHlvdSBoYXZlIGNvbXBsZXRlZCB0aGUgW3ByZS13b3JrXShwcmV3b3JrLmh0bWwpIGJlZm9yZSB5b3VyIGFycml2YWwgdG8gdGhlIHdvcmtzaG9wLiAKCjxicj4KCiMgU2NoZWR1bGUKCk91ciBhZ2VuZGEgaXMgYmVsb3cuIAoKPGJyPgoKIyMjIERheSAxCgoqIDA4OjAwIC0gMDk6MDAgUmVnaXN0cmF0aW9uL2JyZWFrZmFzdAoqIDA5OjAwIC0gMTA6MzAgSG93IHRvIEtlZXAgWW91ciBPcmNoaWQgQWxpdmUKKiAxMDozMCAtIDExOjAwIEJyZWFrIC8gUGxhbnQgU3dhcAoqIDExOjAwIC0gMTI6MzAgR3Jvd2luZyBhIFBhcGF5YSBpbiBDaGljYWdvCiogMTI6MzAgLSAxNDowMCBMdW5jaAoqIDE0OjAwIC0gMTU6MzAgSG93IHRvIEdyb3cgdGhlIE1vc3QgQmVhdXRpZnVsIFRvbWF0bwoqIDE1OjMwIC0gMTY6MDAgQnJlYWsKKiAxNjowMCAtIDE3OjMwIEJhYnkgQXJ1Z3VsYTogMyBWYXJpZXRpZXMsIENvdW50bGVzcyBTYWxhZHMKCgo8YnI+CgojIyMgRGF5IDIKCiogMDg6MDAgLSAwOTowMCBSZWdpc3RyYXRpb24vYnJlYWtmYXN0CiogMDk6MDAgLSAxMDozMCBUcmVuZHMgaW4gSG91c2VwbGFudHMKKiAxMDozMCAtIDExOjAwIEJyZWFrCiogMTE6MDAgLSAxMjozMCBNYWtlIFlvdXIgSG91c2VwbGFudCBJbnN0YWdyYW0gRmFtb3VzCiogMTI6MzAgLSAxNDowMCBMdW5jaAoqIDE0OjAwIC0gMTU6MzAgQ29waW5nIHdpdGggUGxhbnQgRGVhdGgKKiAxNTozMCAtIDE2OjAwIEJyZWFrCiogMTY6MDAgLSAxNzozMCBESVkgRmVydGlsaXplcgoK</div>
 
 
+</div>
+</div>
 
 </div>
 

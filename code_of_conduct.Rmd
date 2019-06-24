@@ -1,0 +1,9 @@
+---
+title: "Code of Conduct"
+---
+
+All workshop attendees, including speakers, sponsors, and volunteers are required to agree to our code of conduct. We will enforce this code throughout the event, and we expect the cooperation from all participants to help us ensure a safe environment for everybody. 
+
+Our workshop is dedicated to providing a harassment-free workshop experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices. We do not tolerate harassment of workshop participants in any form. Sexual language and imagery are not appropriate for any workshop venue, including talks, workshops, parties, Twitter, Facebook, and other online media. Workshop participants violating these rules may be sanctioned or expelled from the workshop without a refund at our discretion.
+
+^ from [The Master Workshop](https://www.themasterworkshop.com/code-of-conduct).

@@ -11,7 +11,7 @@
 
 
 
-<title>Materials</title>
+<title>About This Website</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,14 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/navigation-1.1/sourceembed.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
 
@@ -48,6 +55,9 @@ h6 {
 }
 .table th:not([align]) {
   text-align: left;
+}
+#rmd-source-code {
+  display: none;
 }
 </style>
 
@@ -240,7 +250,99 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+<script>
+$(document).ready(function () {
+  window.initializeSourceEmbed("day2.Rmd");
+});
+</script>
 
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
 
 
 
@@ -250,6 +352,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -262,22 +374,45 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">My Website</a>
+      <a class="navbar-brand" href="index.html">Plant Lovers Workshop 2019</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
   <a href="index.html">Home</a>
 </li>
-<li>
-  <a href="materials.html">Materials</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Materials
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Pre-work</li>
+    <li>
+      <a href="prework.html">Setup Instructions</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-header">Sessions</li>
+    <li>
+      <a href="day1.html">Day 1</a>
+    </li>
+    <li>
+      <a href="day2.html">Day 2</a>
+    </li>
+  </ul>
 </li>
 <li>
-  <a href="about.html">About</a>
+  <a href="code_html"> Code of Conduct</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/rstudio4edu/rmd-bare-demo-workshop">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -285,104 +420,27 @@ $(document).ready(function () {
 
 <div class="fluid-row" id="header">
 
-
-
-<h1 class="title toc-ignore">Materials</h1>
-
-</div>
-
-<div id="TOC">
-<ul>
-<li><a href="#day-1-materials">Day 1 Materials</a></li>
-<li><a href="#day-2-materials">Day 2 Materials</a></li>
-</ul>
-</div>
-
-<p><br></p>
-<div id="day-1-materials" class="section level2">
-<h2>Day 1 Materials</h2>
-<ul>
-<li>08:00 - 09:00 Registration/breakfast
-<ul>
-<li>Breakfast offerings include bagels and coffee.</li>
-</ul></li>
-<li>09:00 - 10:30 Wizarding Careers
-<ul>
-<li>Speaker: Dr. Higgledypuff, Hogwarts</li>
-<li>Summary: In this session, we will present an overview of career tracks which are expected to become the most lucrative and demanded in the next decade. Advice regarding resume preparation and interviewing will be provided.</li>
-<li>Slides:</li>
-<li>Download Exercise files</li>
-</ul></li>
-<li>10:30 - 11:00 Break</li>
-<li>11:00 - 12:30 Recent Advances in Broom Travel
-<ul>
-<li>Speaker: Dr. Higgledypuff</li>
-<li>Summary: In this session, we will present an overview of career tracks which are expected to become the most lucrative and demanded in the next decade. Advice regarding resume preparation and interviewing will be provided.</li>
-<li>Slides:</li>
-<li>Download Exercise files</li>
-</ul></li>
-<li>12:30 - 14:00 Lunch</li>
-<li>14:00 - 15:30 Intro to Quidditch
-<ul>
-<li>Speaker: Dr. Higgledypuff</li>
-<li>Summary: In this session, we will present an overview of career tracks which are expected to become the most lucrative and demanded in the next decade. Advice regarding resume preparation and interviewing will be provided.</li>
-<li>Slides:</li>
-<li>Download Exercise files</li>
-</ul></li>
-<li>15:30 - 16:00 Break</li>
-<li>16:00 - 17:30 Potions I
-<ul>
-<li>Speaker: Dr. Higgledypuff</li>
-<li>Summary: In this session, we will present an overview of career tracks which are expected to become the most lucrative and demanded in the next decade. Advice regarding resume preparation and interviewing will be provided.</li>
-<li>Slides:</li>
-<li>Download Exercise files</li>
-</ul></li>
-</ul>
-<p><br></p>
-</div>
-<div id="day-2-materials" class="section level2">
-<h2>Day 2 Materials</h2>
-<ul>
-<li>08:00 - 09:00 Registration/breakfast
-<ul>
-<li>Breakfast offerings include bagels and coffee.</li>
-</ul></li>
-<li>09:00 - 10:30 Wizarding Careers
-<ul>
-<li>Speaker: Dr. Higgledypuff, Hogwarts</li>
-<li>Summary: In this session, we will present an overview of career tracks which are expected to become the most lucrative and demanded in the next decade. Advice regarding resume preparation and interviewing will be provided.</li>
-<li>Slides:</li>
-<li>Download Exercise files</li>
-</ul></li>
-<li>10:30 - 11:00 Break</li>
-<li>11:00 - 12:30 Recent Advances in Broom Travel
-<ul>
-<li>Speaker: Dr. Higgledypuff</li>
-<li>Summary: In this session, we will present an overview of career tracks which are expected to become the most lucrative and demanded in the next decade. Advice regarding resume preparation and interviewing will be provided.</li>
-<li>Slides:</li>
-<li>Download Exercise files</li>
-</ul></li>
-<li>12:30 - 14:00 Lunch</li>
-<li>14:00 - 15:30 Intro to Quidditch
-<ul>
-<li>Speaker: Dr. Higgledypuff</li>
-<li>Summary: In this session, we will present an overview of career tracks which are expected to become the most lucrative and demanded in the next decade. Advice regarding resume preparation and interviewing will be provided.</li>
-<li>Slides:</li>
-<li>Download Exercise files</li>
-</ul></li>
-<li>15:30 - 16:00 Break</li>
-<li>16:00 - 17:30 Potions I
-<ul>
-<li>Speaker: Dr. Higgledypuff</li>
-<li>Summary: In this session, we will present an overview of career tracks which are expected to become the most lucrative and demanded in the next decade. Advice regarding resume preparation and interviewing will be provided.</li>
-<li>Slides:</li>
-<li>Download Exercise files</li>
-</ul></li>
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
 </ul>
 </div>
 
 
 
+<h1 class="title toc-ignore">About This Website</h1>
+
+</div>
+
+
+<p>More about this website.</p>
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQWJvdXQgVGhpcyBXZWJzaXRlIgotLS0KCk1vcmUgYWJvdXQgdGhpcyB3ZWJzaXRlLgo=</div>
+
+
+</div>
+</div>
 
 </div>
 

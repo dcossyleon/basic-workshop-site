@@ -1,16 +1,31 @@
-name: "Wizardry Workshop 2019"
+name: "Plant Lovers Workshop 2019"
 output_dir: "docs"
 navbar:
-  title: "My Website"
+  title: "Plant Lovers Workshop 2019"
   left:
     - text: "Home"
       href: index.html
     - text: "Materials"
-      href: materials.html
-    - text: "About"
-      href: about.html
+      menu:
+      - text: "Pre-work"
+      - text: Setup Instructions
+        href: prework.html
+      - text: "---"
+      - text: "Sessions"
+      - text: "Day 1"
+        href: day1.html
+      - text: "Day 2"
+        href: day2.html
+    - text: " Code of Conduct"
+      href: code_html
+  right:
+  - icon: fa-github
+    href: https://github.com/rstudio4edu/rmd-bare-demo-workshop
 output:
   html_document:
     theme: flatly
     highlight: tango
     toc: true
+    toc_float: true
+    code_download: true
+    
