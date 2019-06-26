@@ -2,11 +2,13 @@
 title: "Plant Lovers Workshop 2019"
 ---
 
+<br>
+
 ![](https://images.unsplash.com/photo-1463936575829-25148e1db1b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1990&q=80)
 
 <br>
 
-#### We are so excited to have you as a participant at this year's workshop. You can find all of our workshop information on this site.
+#### We are so excited to have you as a participant at this year's workshop. You can find all of our workshop information on this site.  
 
 <br>
 
@@ -15,17 +17,44 @@ title: "Plant Lovers Workshop 2019"
 **Date:** August 3-4, 2019, 08:00-17:30  
 **Location:** Rm 123, Plant Studio, Plant City
 
-*Parking: Not available. Please consider walking here and enjoy the nice plants outdoors as you do.*
+*Parking: Not available. Please consider walking here and enjoy the nice plants outdoors as you do.*  
 
 
 <br>
 
 
+# Set up & Pre-work
+
+To participate in this workshop, you will need to make sure you:  
+
+
+<br>
+
+
+
+#### Install Necessary Packages
+Open RStudio and paste the following code into your console, then press Enter to run it:
+
+
+```{r, eval = FALSE}
+# Download packages from CRAN
+
+install.packages(c("devtools", "knitr", "magrittr", "sf", "sp", "rmarkdown", "usethis", "osmdata"))
+
+```
+
+
+In addition, you will need an up-to-date web browser.  
+
+<br>
+
+
+
 # Learning Objectives
 
-Lorem ipsum dolor sit amet, cum ea ubique iisque facilisi, pri propriae gloriatur ad, duo te feugait disputando. Ex ius congue interpretaris. Sed te probatus dissentiet, purto tollit ut quo, an qui suas oporteat. Novum atomorum incorrupte ea sit.
+Lorem ipsum dolor sit amet, cum ea ubique iisque facilisi, pri propriae gloriatur ad, duo te feugait disputando. Ex ius congue interpretaris. Sed te probatus dissentiet, purto tollit ut quo, an qui suas oporteat. Novum atomorum incorrupte ea sit.  
 
-Ne cetero definiebas scripserit sea, sint viris elitr vim an. Quidam audire nostrum te pri, eam an invenire scriptorem. Ex altera aeterno scaevola pro, solum iusto ne mei. Et pri cibo constituam, velit postea utroque vim ad. Invidunt electram at per, sed id mutat impetus interesset.
+Ne cetero definiebas scripserit sea, sint viris elitr vim an. Quidam audire nostrum te pri, eam an invenire scriptorem. Ex altera aeterno scaevola pro, solum iusto ne mei. Et pri cibo constituam, velit postea utroque vim ad. Invidunt electram at per, sed id mutat impetus interesset.  
 
 
 <br>
@@ -38,12 +67,6 @@ Ne cetero definiebas scripserit sea, sint viris elitr vim an. Quidam audire nost
 
 <br>
 
-# Pre-work
-
-Please make sure you have completed the [pre-work](prework.html) before your arrival to the workshop. 
-
-<br>
-
 # Schedule
 
 Our agenda is below. 
@@ -52,26 +75,55 @@ Our agenda is below.
 
 ### Day 1
 
+Please download the necessary materials for each session. 
+
 * 08:00 - 09:00 Registration/breakfast
 * 09:00 - 10:30 How to Keep Your Orchid Alive
+    + `r xfun::embed_file('example.Rmd')`  
+    + `r xfun::embed_file('data.csv')`  
 * 10:30 - 11:00 Break / Plant Swap
 * 11:00 - 12:30 Growing a Papaya in Chicago
+    + `r xfun::embed_file('example.Rmd')`  
+    + `r xfun::embed_file('data.csv')`  
 * 12:30 - 14:00 Lunch
 * 14:00 - 15:30 How to Grow the Most Beautiful Tomato
+    + `r xfun::embed_file('example.Rmd')`  
+    + `r xfun::embed_file('data.csv')`  
 * 15:30 - 16:00 Break
 * 16:00 - 17:30 Baby Arugula: 3 Varieties, Countless Salads
+    + `r xfun::embed_file('example.Rmd')`  
+    + `r xfun::embed_file('data.csv')` 
+```{r, echo =FALSE}
+
+# devtools::install_github('yihui/xfun')
+
+# a single RmD file
+# xfun::embed_file('example.Rmd')
+```
 
 
 <br>
 
-### Day 2
+
+## Day 2 Materials
+
+Please download the necessary materials for each session. 
 
 * 08:00 - 09:00 Registration/breakfast
 * 09:00 - 10:30 Trends in Houseplants
+    + `r xfun::embed_file('example.Rmd')`  
+    + `r xfun::embed_file('data.csv')` 
 * 10:30 - 11:00 Break
 * 11:00 - 12:30 Make Your Houseplant Instagram Famous
+    + `r xfun::embed_file('example.Rmd')`  
+    + `r xfun::embed_file('data.csv')` 
 * 12:30 - 14:00 Lunch
 * 14:00 - 15:30 Coping with Plant Death
+    + `r xfun::embed_file('example.Rmd')`  
+    + `r xfun::embed_file('data.csv')` 
 * 15:30 - 16:00 Break
 * 16:00 - 17:30 DIY Fertilizer
+    + `r xfun::embed_file('example.Rmd')`  
+    + `r xfun::embed_file('data.csv')` 
+
 

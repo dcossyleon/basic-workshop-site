@@ -5,27 +5,16 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "Materials"
-      menu:
-      - text: "Pre-work"
-      - text: Setup Instructions
-        href: prework.html
-      - text: "---"
-      - text: "Sessions"
-      - text: "Day 1"
-        href: day1.html
-      - text: "Day 2"
-        href: day2.html
-    - text: " Code of Conduct"
+    - text: "Code of Conduct"
       href: code_of_conduct.html
   right:
-  - icon: fa-github
-    href: https://github.com/rstudio4edu/rmd-bare-demo-workshop
+    - icon: fa-github
+      href: https://github.com/rstudio4edu/rmd-bare-demo-workshop
 output:
   html_document:
     theme: flatly
     highlight: tango
-    toc: true
-    toc_float: true
+    toc: false
+    toc_float: false
     code_download: true
     

@@ -1,0 +1,62 @@
+---
+title: "Materials"
+---
+
+<center>![](https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)</center>
+
+
+<br>
+
+
+## Day 1 Materials
+
+Please download the necessary materials for each session. 
+
+* 08:00 - 09:00 Registration/breakfast
+* 09:00 - 10:30 How to Keep Your Orchid Alive
+    + `r xfun::embed_file('example.Rmd')`  
+    + `r xfun::embed_file('data.csv')`  
+* 10:30 - 11:00 Break / Plant Swap
+* 11:00 - 12:30 Growing a Papaya in Chicago
+    + `r xfun::embed_file('example.Rmd')`  
+    + `r xfun::embed_file('data.csv')`  
+* 12:30 - 14:00 Lunch
+* 14:00 - 15:30 How to Grow the Most Beautiful Tomato
+    + `r xfun::embed_file('example.Rmd')`  
+    + `r xfun::embed_file('data.csv')`  
+* 15:30 - 16:00 Break
+* 16:00 - 17:30 Baby Arugula: 3 Varieties, Countless Salads
+    + `r xfun::embed_file('example.Rmd')`  
+    + `r xfun::embed_file('data.csv')` 
+```{r, echo =FALSE}
+
+# devtools::install_github('yihui/xfun')
+
+# a single RmD file
+# xfun::embed_file('example.Rmd')
+```
+
+
+<br>
+
+
+## Day 2 Materials
+
+Please download the necessary materials for each session. 
+
+* 08:00 - 09:00 Registration/breakfast
+* 09:00 - 10:30 Trends in Houseplants
+    + `r xfun::embed_file('example.Rmd')`  
+    + `r xfun::embed_file('data.csv')` 
+* 10:30 - 11:00 Break
+* 11:00 - 12:30 Make Your Houseplant Instagram Famous
+    + `r xfun::embed_file('example.Rmd')`  
+    + `r xfun::embed_file('data.csv')` 
+* 12:30 - 14:00 Lunch
+* 14:00 - 15:30 Coping with Plant Death
+    + `r xfun::embed_file('example.Rmd')`  
+    + `r xfun::embed_file('data.csv')` 
+* 15:30 - 16:00 Break
+* 16:00 - 17:30 DIY Fertilizer
+    + `r xfun::embed_file('example.Rmd')`  
+    + `r xfun::embed_file('data.csv')` 

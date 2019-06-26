@@ -19,9 +19,6 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <script src="site_libs/navigation-1.1/sourceembed.js"></script>
@@ -261,90 +258,6 @@ $(document).ready(function () {
 
 
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
-
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -352,16 +265,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -381,29 +284,8 @@ div.tocify {
         <li>
   <a href="index.html">Home</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Materials
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li class="dropdown-header">Pre-work</li>
-    <li>
-      <a href="prework.html">Setup Instructions</a>
-    </li>
-    <li class="divider"></li>
-    <li class="dropdown-header">Sessions</li>
-    <li>
-      <a href="day1.html">Day 1</a>
-    </li>
-    <li>
-      <a href="day2.html">Day 2</a>
-    </li>
-  </ul>
-</li>
 <li>
-  <a href="code_of_conduct.html"> Code of Conduct</a>
+  <a href="code_of_conduct.html">Code of Conduct</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -441,8 +323,6 @@ div.tocify {
 <div id="rmd-source-code">LS0tCnRpdGxlOiAiQ29kZSBvZiBDb25kdWN0IgotLS0KCkFsbCB3b3Jrc2hvcCBhdHRlbmRlZXMsIGluY2x1ZGluZyBzcGVha2Vycywgc3BvbnNvcnMsIGFuZCB2b2x1bnRlZXJzIGFyZSByZXF1aXJlZCB0byBhZ3JlZSB0byBvdXIgY29kZSBvZiBjb25kdWN0LiBXZSB3aWxsIGVuZm9yY2UgdGhpcyBjb2RlIHRocm91Z2hvdXQgdGhlIGV2ZW50LCBhbmQgd2UgZXhwZWN0IHRoZSBjb29wZXJhdGlvbiBmcm9tIGFsbCBwYXJ0aWNpcGFudHMgdG8gaGVscCB1cyBlbnN1cmUgYSBzYWZlIGVudmlyb25tZW50IGZvciBldmVyeWJvZHkuIAoKT3VyIHdvcmtzaG9wIGlzIGRlZGljYXRlZCB0byBwcm92aWRpbmcgYSBoYXJhc3NtZW50LWZyZWUgd29ya3Nob3AgZXhwZXJpZW5jZSBmb3IgZXZlcnlvbmUsIHJlZ2FyZGxlc3Mgb2YgZ2VuZGVyLCBnZW5kZXIgaWRlbnRpdHkgYW5kIGV4cHJlc3Npb24sIGFnZSwgc2V4dWFsIG9yaWVudGF0aW9uLCBkaXNhYmlsaXR5LCBwaHlzaWNhbCBhcHBlYXJhbmNlLCBib2R5IHNpemUsIHJhY2UsIGV0aG5pY2l0eSwgcmVsaWdpb24gKG9yIGxhY2sgdGhlcmVvZiksIG9yIHRlY2hub2xvZ3kgY2hvaWNlcy4gV2UgZG8gbm90IHRvbGVyYXRlIGhhcmFzc21lbnQgb2Ygd29ya3Nob3AgcGFydGljaXBhbnRzIGluIGFueSBmb3JtLiBTZXh1YWwgbGFuZ3VhZ2UgYW5kIGltYWdlcnkgYXJlIG5vdCBhcHByb3ByaWF0ZSBmb3IgYW55IHdvcmtzaG9wIHZlbnVlLCBpbmNsdWRpbmcgdGFsa3MsIHdvcmtzaG9wcywgcGFydGllcywgVHdpdHRlciwgRmFjZWJvb2ssIGFuZCBvdGhlciBvbmxpbmUgbWVkaWEuIFdvcmtzaG9wIHBhcnRpY2lwYW50cyB2aW9sYXRpbmcgdGhlc2UgcnVsZXMgbWF5IGJlIHNhbmN0aW9uZWQgb3IgZXhwZWxsZWQgZnJvbSB0aGUgd29ya3Nob3Agd2l0aG91dCBhIHJlZnVuZCBhdCBvdXIgZGlzY3JldGlvbi4KCl4gZnJvbSBbVGhlIE1hc3RlciBXb3Jrc2hvcF0oaHR0cHM6Ly93d3cudGhlbWFzdGVyd29ya3Nob3AuY29tL2NvZGUtb2YtY29uZHVjdCku</div>
 
 
-</div>
-</div>
 
 </div>
 
